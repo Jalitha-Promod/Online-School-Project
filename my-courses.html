@@ -1,0 +1,143 @@
+<!-- my-courses.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="w-full h-16 bg-white shadow-md flex items-center justify-between px-8">
+        <div class="flex items-center space-x-4">
+            <div class="text-blue-600 font-bold text-xl">Oracle</div>
+            <div class="text-gray-500">Categories</div>
+            <input type="text" placeholder="Search courses" class="border rounded-md px-3 py-1 outline-none">
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="text-gray-600">Teach on Oracle</button>
+            <img src="images/heart.jpg" alt="Favorites" class="w-6 h-6">
+            <img src="images/addtocart.jpg" alt="Cart" class="w-6 h-6">
+            <img src="images/bell.jpg" alt="Notifications" class="w-6 h-6">
+            <div class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-white">J</div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="flex px-16 py-8">
+        <!-- Sidebar -->
+        <aside class="w-72 bg-gray-50 p-6 rounded-2xl">
+            <div class="flex flex-col items-center">
+                <img class="w-32 h-32 rounded-full" src="images/Avatar.jpg" alt="Profile Picture">
+                <h2 class="mt-4 text-lg font-semibold">John Doe</h2>
+                <button class="mt-2 px-4 py-1 bg-white border rounded">Share Profile</button>
+            </div>
+            <nav class="mt-6 space-y-2 w-full">
+                <a href="index.html" class="block py-2 px-3 hover:bg-gray-200 rounded">Profile</a>
+                <a href="my-courses.html" class="block py-2 px-3 bg-gray-900 text-white rounded">My Courses</a>
+                <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">Teachers</a>
+                <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">Message</a>
+                <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">My Reviews</a>
+            </nav>
+        </aside>
+
+        <!-- Course Grid -->
+        <main class="flex-1 ml-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">Courses <span class="text-gray-500 text-base">(12)</span></h2>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search User" class="pl-10 pr-4 py-2 border rounded-lg">
+                        <span class="absolute left-3 top-2.5 text-gray-400">
+                            🔍
+                        </span>
+                    </div>
+                    <select class="border rounded-lg py-2 px-3">
+                        <option>Relevance</option>
+                        <option>Newest</option>
+                    </select>
+                    <button class="border rounded-lg py-2 px-4">Filter</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Course Card (repeat this block as needed) -->
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <!-- Repeat above card 11 more times to match layout -->
+                <!-- You can duplicate this div 11 times to match total 12 courses -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-8 space-x-2">
+                <button class="px-3 py-1 border rounded">&lt;</button>
+                <button class="px-3 py-1 border bg-blue-600 text-white rounded">1</button>
+                <button class="px-3 py-1 border rounded">2</button>
+                <button class="px-3 py-1 border rounded">3</button>
+                <button class="px-3 py-1 border rounded">&gt;</button>
+            </div>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="w-full bg-[#1E293B] text-white py-16">
+        <div class="max-w-screen-xl mx-auto px-16 grid grid-cols-4 gap-12">
+            
+            <!-- Brand Section -->
+            <div>
+                <div class="flex items-center mb-4">
+                    <img src="images/byway-logo.png" alt="Byway Logo" class="w-10 h-10 mr-3">
+                    <h2 class="text-2xl font-bold">Byway</h2>
+                </div>
+                <p class="text-sm leading-relaxed">
+                    Empowering learners through accessible and engaging online education.<br>
+                    Oracle is a leading online learning platform dedicated to providing high-quality, flexible, and affordable educational experiences.
+                </p>
+            </div>
+    
+            <!-- Get Help Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Get Help</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Contact Us</li>
+                    <li>Latest Articles</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+    
+            <!-- Programs Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Art & Design</li>
+                    <li>Business</li>
+                    <li>IT & Software</li>
+                    <li>Languages</li>
+                    <li>Programming</li>
+                </ul>
+            </div>
+    
+            <!-- Contact Us Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Address: 123 Main Street, Anytown, CA 12345</li>
+                    <li>Tel: +1 (123) 456-7890</li>
+                    <li>Mail: Oracleedu@webkul.in</li>
+                </ul>
+                <div class="flex space-x-4 mt-4">
+                    <img src="images/facebook.png" alt="Facebook" class="w-8 h-8">
+                    <img src="images/github.png" alt="GitHub" class="w-8 h-8">
+                    <img src="images/google.png" alt="Google" class="w-8 h-8">
+                    <img src="images/x-icon.png" alt="X" class="w-8 h-8">
+                    <img src="images/microsoft.png" alt="Microsoft" class="w-8 h-8">
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+</html>
