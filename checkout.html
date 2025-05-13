@@ -11,34 +11,61 @@
     />
   </head>
   <body>
-    <header class="header">
-      <nav class="nav-container">
-        <div class="nav-left">
-          <a href="/" class="logo">
-            <div class="logo-wrapper">
-              <img src="Assets/logo.png" alt="Oracle Logo" />
-              <h1 class="logo-text">Oracle</h1>
-            </div>
-          </a>
-          <div class="categories">Categories</div>
-          <div class="search-bar">
-            <i class="fas fa-search search-icon"></i>
-            <input type="search" placeholder="Search courses" />
-          </div>
-        </div>
-        <div class="nav-right">
-          <a href="#" class="teach-link">Teach on Oracle</a>
+    <nav class="navbar">
+      <div class="hamburger-menu">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </div>
 
-          <div class="nav-icons">
-            <i class="far fa-heart"></i>
-            <i class="fas fa-shopping-cart"></i>
-            <i class="far fa-bell"></i>
-            <div class="user-profile">J</div>
-          </div>
-        </div>
-      </nav>
-    </header>
+      <div class="navbar-logo">
+        <img src="Assets/logo.png" alt="Oracle Logo" />
+        <span>Oracle</span>
+      </div>
 
+      <div class="navbar-links">
+        <a href="#">Categories</a>
+        <div class="navbar-search-desktop">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search courses" />
+        </div>
+        <a href="#">Teach on Oracle</a>
+      </div>
+
+      <div class="search-input-container-mobile">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search courses" />
+        <div class="cancel-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="navbar-icons">
+        <div class="mobile-search-icon">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        <a href="" class="hidden-mobile"><i class="far fa-heart"></i></a>
+        <a href="" class="hidden-mobile"
+          ><i class="fas fa-shopping-cart"></i
+        ></a>
+        <a href="" class="hidden-mobile"><i class="far fa-bell"></i></a>
+        <div class="hidden-mobile user-profile"><a href="">J</a></div>
+      </div>
+    </nav>
     <div class="page-wrapper checkout-page">
       <main class="checkout-content">
         <div class="breadcrumb">
@@ -76,22 +103,19 @@
               <h3 class="payment-title">Payment Method</h3>
 
               <div class="payment-options-container">
-                <div class="payment-option-static selected">
-                  <div class="payment-option-header">
-                    <input
-                      type="radio"
-                      id="card"
-                      name="paymentMethod"
-                      value="card"
-                      checked
-                    />
-                    <label for="card">
-                      <span class="payment-label-text">Credit/Debit Card</span>
-                      <span class="payment-logos">
-                        <img src="/assets/icon/card.png" alt="Visa" />
-                      </span>
-                    </label>
+                <!-- Credit/Debit Card -->
+                <input type="radio" id="card" name="paymentMethod" checked />
+                <label for="card" class="payment-label">
+                  <div class="payment-label-inner">
+                    <span class="custom-radio"></span>
+                    <span class="payment-label-text">Credit/Debit Card</span>
+                    <span class="payment-logos">
+                      <img src="/assets/icon/card.png" alt="Card" />
+                    </span>
                   </div>
+                </label>
+                <div class="payment-option-static card">
+                  <div class="payment-option-header"></div>
                   <div class="card-fields-visible">
                     <div class="form-group">
                       <label for="cardName">Name of Card</label>
@@ -138,21 +162,19 @@
                   </div>
                 </div>
 
-                <div class="payment-option-static">
-                  <div class="payment-option-header">
-                    <input
-                      type="radio"
-                      id="paypal"
-                      name="paymentMethod"
-                      value="paypal"
-                    />
-                    <label for="paypal">
-                      <span class="payment-label-text">PayPal</span>
-                      <span class="payment-logos">
-                        <img src="assets/icon/paypal.png" alt="PayPal" />
-                      </span>
-                    </label>
+                <!-- PAYPAL -->
+                <input type="radio" id="paypal" name="paymentMethod" />
+                <label for="paypal" class="payment-label">
+                  <div class="payment-label-inner">
+                    <span class="custom-radio"></span>
+                    <span class="payment-label-text">PayPal</span>
+                    <span class="payment-logos">
+                      <img src="/assets/icon/paypal.png" alt="PayPal" />
+                    </span>
                   </div>
+                </label>
+                <div class="payment-option-static paypal">
+                  <div class="payment-option-header"></div>
                 </div>
               </div>
             </div>
@@ -272,5 +294,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="checkout.js"></script>
   </body>
 </html>

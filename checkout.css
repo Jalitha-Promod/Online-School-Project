@@ -26,110 +26,117 @@ video {
   display: block;
 }
 
-/* Header styles */
-.header {
-  background: #fff;
+/* nav bar styles */
+.navbar {
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Needed for absolute positioning of mobile menu/search */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Logo Section */
+.navbar-logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: rgba(51, 65, 85, 1);
+.navbar-logo img {
+  height: 40px; /* Adjust as needed */
+  margin-right: 0.5rem;
+  border-radius: 4px; /* Example styling */
 }
 
-.logo {
+.navbar-logo span {
+  font-weight: bold;
+  font-size: 1.125rem; /* Equivalent to Tailwind text-lg */
+}
+
+/* Navigation Links Container (Desktop) */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allows links to take up available space */
+  margin: 0 1rem; /* Space around the links/search */
+}
+
+.navbar-links a {
   text-decoration: none;
-  color: inherit;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+  cursor: pointer;
 }
 
-.logo-wrapper {
+.navbar-links a:hover {
+  color: #007bff; /* Example hover color */
+}
+
+/* Desktop Search Bar */
+.navbar-search-desktop {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px; /* Fully rounded */
+  padding: 0.25rem 0.75rem;
+  flex-grow: 1; /* Allows search to grow */
+  margin: 0 1rem; /* Space around search */
+  max-width: 500px; /* Example max width */
+}
+.navbar-search-desktop,
+.search-input-container-mobile i {
+  padding-right: 1rem;
+  color: #4d4d4d;
+}
+.navbar-search-desktop input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 0.25rem;
 }
 
-.logo img {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 16px;
-  font-weight: meadium;
-  margin: 0;
-}
-
-.search-bar {
-  position: relative;
+/* Icons Container */
+.navbar-icons {
   display: flex;
   align-items: center;
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  font-size: 14px;
-}
-
-.search-bar input {
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
-  border: 1px solid rgba(51, 65, 85, 1);
-  border-radius: 8px;
-  width: 100%;
-  max-width: 600px;
-  font-size: 14px;
-  min-width: 150px;
-}
-
-.search-bar input::placeholder {
-  color: rgba(51, 65, 85, 0.6);
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.teach-link {
-  text-decoration: none;
-  color: rgba(51, 65, 85, 1);
-  font-weight: medium;
-  margin-right: 2rem;
-}
-
-.nav-icons {
-  display: flex;
+  margin-left: 1rem;
   gap: 1.5rem;
-  align-items: center;
+}
+.navbar-icons a,
+i {
+  color: rgba(51, 65, 85, 1);
 }
 
-.user-profile {
+.navbar-icons .user-profile {
   width: 32px;
   height: 32px;
-  background: #334155;
-  color: white;
-  border-radius: 50%;
+  background-color: rgba(51, 65, 85, 1);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
 }
+.navbar-icons .user-profile a {
+  text-decoration: none;
+  color: white;
+}
+/* Mobile-Specific Elements (Initially Hidden on Desktop) */
+.hamburger-menu,
+.mobile-search-icon,
+.search-input-container-mobile {
+  display: none;
+}
+/* nav bar end */
 
+/* Main content styles */
 .page-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -193,14 +200,13 @@ video {
 .form-row-split .form-group {
   flex: 1;
   min-width: 150px;
+  margin-bottom: 0;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-.form-row-split .form-group {
-  margin-bottom: 0;
-}
+
 .form-row-split .form-group label {
   font-size: 18px;
   font-weight: 600;
@@ -238,7 +244,68 @@ video {
   color: rgba(15, 23, 42, 1);
 }
 
+/* Hide native radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+.payment-label {
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.payment-label-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.payment-label-text {
+  flex-grow: 1;
+  font-weight: 600;
+}
+
+.payment-logos img {
+  height: 24px;
+}
+
+/* When selected */
+input[type="radio"]:checked + label {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+input[type="radio"]:checked + label .custom-radio {
+  border-color: #007bff;
+}
+
+input[type="radio"]:checked + label .custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+}
+
 .payment-option-static {
+  display: none;
   border: 1px solid #dee2e6;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -253,62 +320,10 @@ video {
   background-color: rgba(226, 232, 240, 1);
 }
 
-.payment-option-static input[type="radio"] {
-  opacity: 0;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-}
-
-.payment-option-header label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-weight: 500;
-  color: #495057;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
-/* Custom radio appearance */
-.payment-option-header label::before {
-  content: "";
-  display: inline-block;
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #adb5bd;
-  border-radius: 50%;
-  margin-right: 0.75rem;
-  background-color: #fff;
-}
-/* Checked state style */
-.payment-option-static input[type="radio"]:checked + label::before {
-  border-color: #0d6efd; /* Outer ring blue */
-  background-color: #fff; /* Area inside the ring white */
-  /* SVG with a blue inner circle */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%230d6efd'/%3e%3c/svg%3e");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.payment-label-text {
-  flex-grow: 1;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: rgba(15, 23, 42, 1);
-}
-
-.payment-logos {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: 1rem;
-}
-.payment-logos img {
-  height: 22px;
-  width: auto;
+/* Show based on selected radio */
+#card:checked ~ .card,
+#paypal:checked ~ .paypal {
+  display: block;
 }
 
 /* Visible Credit Card fields styling */
@@ -319,7 +334,7 @@ video {
 
 /*Order Details Column (Right)*/
 .order-summary-widget {
-  padding-bottom:4rem;
+  padding-bottom: 4rem;
   position: sticky;
   top: 100px;
 }
@@ -342,7 +357,7 @@ video {
 .item-image {
   width: 130px;
   height: 130px;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
 }
@@ -402,7 +417,7 @@ video {
   padding: 8px;
   margin-bottom: 24px;
   background-color: rgba(226, 232, 240, 1);
-  border: 1px  solid rgba(226, 232, 240, 1);
+  border: 1px solid rgba(226, 232, 240, 1);
   border-radius: 8px;
 }
 .price-line {
@@ -526,6 +541,114 @@ video {
   width: 28px;
   height: 28px;
   object-fit: contain;
+}
+/* --- Mobile Styles --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem; /* Adjust padding for mobile */
+  }
+
+  /* Center Logo on Mobile */
+  .navbar-logo {
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  /* Hide Desktop Elements */
+  .navbar-links {
+    display: none; /* Hide the main navigation links container initially */
+  }
+
+  .navbar-search-desktop {
+    display: none;
+  }
+
+  .navbar-icons .hidden-mobile {
+    display: none; /* Hide specific icons on mobile */
+  }
+
+  /* Show Mobile Elements */
+  .hamburger-menu,
+  .mobile-search-icon {
+    display: block;
+    padding: 0.5rem; /* Add some clickable area */
+    cursor: pointer;
+  }
+
+  /* Adjust icons display on mobile */
+  .navbar-icons {
+    margin-left: 0.5rem; /* Reduce margin */
+  }
+
+  /* Mobile Navigation Links (Hamburger Menu Content) */
+  .navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .navbar-links.active a {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    width: 100%; /* Full width clickable area */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+  }
+
+  .navbar-links.active a:last-child {
+    border-bottom: none; /* No border on the last item */
+  }
+
+  /* Mobile Search Input Container (Initially Hidden) */
+  .search-input-container-mobile {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the full navbar height */
+    background-color: #fff;
+    z-index: 20; /* Ensure it's above other elements */
+    padding: 0.5rem 1rem;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .search-input-container-mobile.active {
+    display: flex; /* Show when active */
+  }
+
+  .search-input-container-mobile input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .search-input-container-mobile svg {
+    width: 20px;
+    height: 20px;
+    color: #555;
+    margin-right: 0.5rem;
+  }
+
+  .search-input-container-mobile .cancel-icon {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  .search-input-container-mobile .cancel-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (min-width: 992px) {
