@@ -7,21 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <!-- Header -->
-    <header class="w-full h-16 bg-white shadow-md flex items-center justify-between px-8">
-        <div class="flex items-center space-x-4">
-            <div class="text-blue-600 font-bold text-xl">Oracle</div>
-            <div class="text-gray-500">Categories</div>
-            <input type="text" placeholder="Search courses" class="border rounded-md px-3 py-1 outline-none">
-        </div>
-        <div class="flex items-center space-x-4">
-            <button class="text-gray-600">Teach on Oracle</button>
-            <img src="images/heart.jpg" alt="Favorites" class="w-6 h-6">
-            <img src="images/addtocart.jpg" alt="Cart" class="w-6 h-6">
-            <img src="images/bell.jpg" alt="Notifications" class="w-6 h-6">
-            <div class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-white">J</div>
-        </div>
-    </header>
+<!-- Updated Header -->
+<!-- Updated Header -->
+<header class="w-full h-20 bg-white shadow-md flex items-center justify-between px-12 sticky top-0 z-50">
+  <!-- Left Section -->
+  <div class="flex items-center space-x-6">
+    <!-- Logo -->
+    <img src="images/logo.png" alt="Logo" class="w-8 h-8">
+
+    <!-- Oracle branding with background -->
+    <div class="text-[#334155] text-xl font-semibold">
+      Oracle
+    </div>
+    </div>
+
+    <!-- Categories -->
+    <a href="#" class="text-gray-600 hover:text-blue-600 text-sm">Categories</a>
+
+    <!-- Custom Search bar -->
+    <div class="relative">
+      <input
+        type="text"
+        placeholder="Search courses"
+        class="pl-10 pr-4 border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+        style="width: 622px; height: 40px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; border-width: 1px;"
+      />
+      <span class="absolute left-3 top-2.5 text-gray-400 text-lg"></span>
+    </div>
+
+    <!-- Teach link -->
+    <a href="#" class="text-sm text-gray-600 hover:text-blue-600 ml-4">Teach on Oracle</a>
+  </div>
+
+  <!-- Right Section -->
+  <div class="flex items-center space-x-6">
+    <img src="images/heart.jpg" alt="Favorites" class="w-6 h-6 cursor-pointer hover:scale-105 transition">
+    <img src="images/addtocart.jpg" alt="Cart" class="w-6 h-6 cursor-pointer hover:scale-105 transition">
+    <img src="images/bell.jpg" alt="Notifications" class="w-6 h-6 cursor-pointer hover:scale-105 transition">
+    <img src="images/Avatar.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer">
+  </div>
+</header>
+
+
 
     <!-- Main content -->
     <div class="flex px-16 py-8">
@@ -33,11 +60,11 @@
                 <button class="mt-2 px-4 py-1 bg-white border rounded">Share Profile</button>
             </div>
             <nav class="mt-6 space-y-2 w-full">
-                <a href="index.html" class="block py-2 px-3 hover:bg-gray-200 rounded">Profile</a>
+                <a href="profile.html" class="block py-2 px-3 hover:bg-gray-200 rounded">Profile</a>
                 <a href="my-courses.html" class="block py-2 px-3 bg-gray-900 text-white rounded">My Courses</a>
                 <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">Teachers</a>
                 <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">Message</a>
-                <a href="#" class="block py-2 px-3 hover:bg-gray-200 rounded">My Reviews</a>
+                <a href="review.html" class="block py-2 px-3 hover:bg-gray-200 rounded">My Reviews</a>
             </nav>
         </aside>
 
@@ -68,6 +95,55 @@
                     <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
                     <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
                 </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="images/course.jpg" alt="Course Image" class="rounded mb-3">
+                    <h3 class="text-lg font-semibold">Beginner's Guide to Design</h3>
+                    <p class="text-sm text-gray-600 mb-2">By Ronald Richards</p>
+                    <p class="text-yellow-500 text-sm">★★★★★ <span class="text-gray-500">(1200 Ratings)</span></p>
+                </div>
+               
                 <!-- Repeat above card 11 more times to match layout -->
                 <!-- You can duplicate this div 11 times to match total 12 courses -->
             </div>
@@ -89,7 +165,7 @@
             <!-- Brand Section -->
             <div>
                 <div class="flex items-center mb-4">
-                    <img src="images/byway-logo.png" alt="Byway Logo" class="w-10 h-10 mr-3">
+                    <img src="images/logo.png" alt="Byway Logo" class="w-10 h-10 mr-3">
                     <h2 class="text-2xl font-bold">Byway</h2>
                 </div>
                 <p class="text-sm leading-relaxed">
@@ -129,11 +205,7 @@
                     <li>Mail: Oracleedu@webkul.in</li>
                 </ul>
                 <div class="flex space-x-4 mt-4">
-                    <img src="images/facebook.png" alt="Facebook" class="w-8 h-8">
-                    <img src="images/github.png" alt="GitHub" class="w-8 h-8">
-                    <img src="images/google.png" alt="Google" class="w-8 h-8">
-                    <img src="images/x-icon.png" alt="X" class="w-8 h-8">
-                    <img src="images/microsoft.png" alt="Microsoft" class="w-8 h-8">
+                    <img src="images/logoicons.png" alt="Social Icons" style="width: 296px; height: 40px;">
                 </div>
             </div>
     

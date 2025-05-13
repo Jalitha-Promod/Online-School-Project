@@ -12,17 +12,41 @@ body {
 }
 
 /* Header */
-.header {
-  width: 100%;
-  height: 65px;
-  background-color: #ffffff;
+.oracle-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #2563eb;
+}
+
+.search-bar {
+  width: 622px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.teach-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #334155;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-icons {
+  width: 180px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  font-size: 20px;
-  font-weight: bold;
 }
 
 /* Container layout */
@@ -33,10 +57,36 @@ body {
   padding: 40px 80px;
 }
 
+.oracle-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #334155;
+}
+
+.teach-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  white-space: nowrap;
+  color: #334155;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+
+
 /* Sidebar/Profile section */
 .profile-sidebar {
   width: 290px;
-  min-height: 607px;
+  min-height: 300px;
   background: #f8fafc;
   padding: 24px;
   border-radius: 16px;
@@ -213,4 +263,43 @@ button:hover {
     align-items: center;
     text-align: center;
   }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .header-icons {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 8px;
+  }
+}
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: white;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.pagination .active {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
 }
