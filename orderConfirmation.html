@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order confirmation</title>
+    <link rel="stylesheet" href="/Assets/style/Order_confirmation.css" />
+    <link rel="stylesheet" href="/Assets/style/head&footer.css" />
+    <link rel="stylesheet" href="/Assets/style/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="nav-conntainer">
+      <nav class="navbar">
+        <div class="hamburger-menu">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="navbar-logo">
+          <img src="Assets/logo.png" alt="Oracle Logo" />
+          <span>Oracle</span>
+        </div>
+
+        <div class="navbar-links">
+          <a href="#">Categories</a>
+          <div class="navbar-search-desktop">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Search courses" />
+          </div>
+          <a href="#">Teach on Oracle</a>
+        </div>
+
+        <div class="search-input-container-mobile">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search courses" />
+          <div class="cancel-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="navbar-icons">
+          <div class="mobile-search-icon">
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <a href="" class="hidden-mobile"><i class="far fa-heart"></i></a>
+          <a href="" class="hidden-mobile"
+            ><i class="fas fa-shopping-cart"></i
+          ></a>
+          <a href="" class="hidden-mobile"><i class="far fa-bell"></i></a>
+          <div class="hidden-mobile user-profile"><a href="">J</a></div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="order-complete">
+      <div class="check-icon">
+        <svg viewBox="0 0 24 24" fill="none" class="checkmark">
+          <circle cx="12" cy="12" r="10" fill="#16A34A" />
+          <path
+            d="M8 12l3 3 5-5"
+            stroke="#fff"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <h1>Order Complete</h1>
+      <p>You Will Receive a confirmation email soon!</p>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Column 1: Logo & Description -->
+        <div class="footer-col footer-col-1">
+          <div class="footer-brand">
+            <img src="assets/logo.png" alt="Byway Logo" class="footer-logo" />
+            <span class="footer-logo-text">Byway</span>
+          </div>
+
+          <p>
+            Empowering learners through accessible and engaging online
+            education.
+          </p>
+          <p>
+            Oracle is a leading online learning platform dedicated to providing
+            high-quality, flexible, and affordable educational experiences.
+          </p>
+        </div>
+
+        <!-- Column 2: Get Help -->
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Latest Articles</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Programs -->
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#">Art & Design</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">IT & Software</a></li>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Programming</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Icons -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>Address: 123 Main Street, Anytown, CA 12345</p>
+          <p>Tel: (+123) 456-7890</p>
+          <p>Mail: Oracleedu@webkul.in</p>
+          <div class="social-icons">
+            <img src="./assets/icon/facebook.png" alt="Facebook" />
+            <img src="./assets/icon/github.png" alt="GitHub" />
+            <img src="./assets/icon/google.png" alt="Google" />
+            <img src="./assets/icon/x.png" alt="X" />
+            <img src="./assets/icon/microsoft.png" alt="Microsoft" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/Assets/js/checkout.js"></script>
+  </body>
+</html>

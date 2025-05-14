@@ -1,3 +1,32 @@
+@font-face {
+  font-family: "Byway";
+  src: url("../assets/fonts/Byway.woff2") format("woff2"),
+    url("../assets/fonts/Byway.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 /* nav bar styles */
 .nav-conntainer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
