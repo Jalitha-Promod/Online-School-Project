@@ -1,0 +1,191 @@
+/* nav bar styles */
+.nav-conntainer {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Needed for absolute positioning of mobile menu/search */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px; /* Adjust as needed */
+  margin-right: 0.5rem;
+  border-radius: 4px; /* Example styling */
+}
+
+.navbar-logo span {
+  font-weight: bold;
+  font-size: 1.125rem; /* Equivalent to Tailwind text-lg */
+}
+
+/* Navigation Links Container (Desktop) */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allows links to take up available space */
+  margin: 0 1rem; /* Space around the links/search */
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.navbar-links a:hover {
+  color: #007bff; /* Example hover color */
+}
+
+/* Desktop Search Bar */
+.navbar-search-desktop {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 9999px; /* Fully rounded */
+  padding: 0.25rem 0.75rem;
+  flex-grow: 1; /* Allows search to grow */
+  margin: 0 1rem; /* Space around search */
+  max-width: 500px; /* Example max width */
+}
+.navbar-search-desktop,
+.search-input-container-mobile i {
+  padding-right: 1rem;
+  color: #4d4d4d;
+}
+.navbar-search-desktop input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 0.25rem;
+}
+
+/* Icons Container */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  gap: 1.5rem;
+}
+.navbar-icons a,
+i {
+  color: rgba(51, 65, 85, 1);
+}
+
+.navbar-icons .user-profile {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(51, 65, 85, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.navbar-icons .user-profile a {
+  text-decoration: none;
+  color: white;
+}
+/* Mobile-Specific Elements (Initially Hidden on Desktop) */
+.hamburger-menu,
+.mobile-search-icon,
+.search-input-container-mobile {
+  display: none;
+}
+
+/* footer */
+.site-footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  padding: 4rem;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+.footer-col-1 {
+  flex: 1 1 400px;
+  margin-right: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 28px;
+  height: auto;
+}
+
+.footer-logo-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}

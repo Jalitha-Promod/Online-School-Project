@@ -1,0 +1,151 @@
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Center Logo on Mobile */
+  .navbar-logo {
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  /* Hide Desktop Elements */
+  .navbar-links {
+    display: none; /* Hide the main navigation links container initially */
+  }
+
+  .navbar-search-desktop {
+    display: none;
+  }
+
+  .navbar-icons .hidden-mobile {
+    display: none; /* Hide specific icons on mobile */
+  }
+
+  /* Show Mobile Elements */
+  .hamburger-menu,
+  .mobile-search-icon {
+    display: block;
+    padding: 0.5rem; /* Add some clickable area */
+    cursor: pointer;
+  }
+
+  /* Adjust icons display on mobile */
+  .navbar-icons {
+    margin-left: 0.5rem; /* Reduce margin */
+  }
+
+  /* Mobile Navigation Links (Hamburger Menu Content) */
+  .navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .navbar-links.active a {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    width: 100%; /* Full width clickable area */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+  }
+
+  .navbar-links.active a:last-child {
+    border-bottom: none; /* No border on the last item */
+  }
+
+  /* Mobile Search Input Container (Initially Hidden) */
+  .search-input-container-mobile {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the full navbar height */
+    background-color: #fff;
+    z-index: 20; /* Ensure it's above other elements */
+    padding: 0.5rem 1rem;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .search-input-container-mobile.active {
+    display: flex; /* Show when active */
+  }
+
+  .search-input-container-mobile input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .search-input-container-mobile svg {
+    width: 20px;
+    height: 20px;
+    color: #555;
+    margin-right: 0.5rem;
+  }
+
+  .search-input-container-mobile .cancel-icon {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  .search-input-container-mobile .cancel-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    flex-direction: start;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .breadcrumb .hearder h1 {
+    font-size: 1.2rem;
+  }
+
+  .form-row-split {
+    flex-direction: column;
+    gap: 0;
+  }
+  .form-row-split .form-group {
+    margin-bottom: 1rem;
+    min-width: 100%;
+  }
+  .payment-logos {
+    padding: 1rem;
+  }
+
+  .order-summary-widget {
+    position: static;
+    margin-top: 2rem;
+  }
+  .checkout-form {
+    padding: 1.5rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .checkout-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+
+
