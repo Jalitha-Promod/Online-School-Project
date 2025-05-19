@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Assets/style/orderComplete.css" />
-    <title>Document</title>
+    <title>Introduction to User Experience Design</title>
+    <link rel="stylesheet" href="Assets/style/orderComplete.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -16,9 +16,11 @@
   <body>
     <header>
       <div class="navbar">
+        <button id="sidebarToggle" class="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <div class="navbar-logo">
-          <img src="Assets/logo.png" alt="Oracle Logo" />
-          <span>Oracle</span>
+          <img src="Assets/logo.png" alt="Oracle Logo" /> <span>Oracle</span>
         </div>
         <div class="rating-star">
           <i class="fa-solid fa-star"></i>
@@ -26,5 +28,236 @@
         </div>
       </div>
     </header>
+
+    <div class="course-title-container">
+      <h1 class="course-title">Introduction to User Experience Design</h1>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-container">
+      <div class="main-content">
+        <div class="video-container">
+          <img src="Assets/videoThumbnial.jpg" alt="Course video thumbnail" />
+          <button class="play-button" aria-label="Play video">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+        </div>
+
+        <div class="tabs">
+          <div class="tabs-list">
+            <button class="tab-btn active" data-tab="details">Details</button>
+            <button class="tab-btn" data-tab="instructor">Instructor</button>
+            <button class="tab-btn" data-tab="courses">Courses</button>
+            <button class="tab-btn" data-tab="reviews">Reviews</button>
+          </div>
+
+          <div class="tab-content active" id="details-content">
+            <section class="course-section">
+              <h2>Course Overview</h2>
+              <p>
+                Embark on a transformative journey into the dynamic world of
+                User Experience (UX) Design with our comprehensive course,
+                "Introduction to User Experience Design". This course is
+                meticulously crafted to provide you with a foundational
+                understanding of the principles, methodologies, and tools that
+                drive exceptional user experiences in the digital landscape.
+              </p>
+            </section>
+
+            <section class="course-section">
+              <h2>Key Learning Objectives</h2>
+              <ul class="objectives-list">
+                <li>
+                  <span class="bullet">•</span>
+                  <span>
+                    Gain a clear understanding of what User Experience (UX)
+                    Design entails and its importance in today's digital world.
+                  </span>
+                </li>
+                <li>
+                  <span class="bullet">•</span>
+                  <span>
+                    Explore the fundamental principles of user-centered design
+                    and how to apply them to create intuitive and user-friendly
+                    interfaces.
+                  </span>
+                </li>
+                <li>
+                  <span class="bullet">•</span>
+                  <span>
+                    Learn about the various elements that contribute to a
+                    positive user experience, including information
+                    architecture, interaction design, and visual design.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="course-section instructor-section"
+              id="instructor-details-section"
+            >
+              <h2>Instructor</h2>
+              <div class="instructor-info-main">
+                <h3>Ronald Richards</h3>
+                <p class="instructor-title">UX/UI Designer</p>
+              </div>
+              <div class="profile-stats-container">
+                <img
+                  src="Assets/profile.png"
+                  alt="Ronald Richards"
+                  class="instructor-img"
+                />
+                <div class="instructor-stats">
+                  <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span>40,445 Reviews</span>
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>800 Students</span>
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-play-circle"></i>
+                    <span>15 Courses</span>
+                  </div>
+                </div>
+              </div>
+              <p class="instructor-bio">
+                With over a decade of industry experience, Ronald brings a
+                wealth of practical knowledge to the classroom. He has played a
+                pivotal role in designing user-centric interfaces for renowned
+                tech companies, ensuring seamless and engaging user experiences.
+              </p>
+            </section>
+          </div>
+
+          <div class="tab-content" id="instructor-content">
+            <p>
+              Full instructor profile and details would go here if it were a
+              separate, more detailed view.
+            </p>
+          </div>
+
+          <div class="tab-content" id="courses-content">
+            <p>
+              A list of other courses offered by this instructor or related to
+              this topic would go here.
+            </p>
+          </div>
+
+          <div class="tab-content" id="reviews-content">
+            <p>
+              User reviews and ratings for the course would be displayed here.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar" id="sidebar">
+        <div class="section">
+          <div class="section-header" data-section="intro-ux">
+            <span>Introduction to UX Design</span>
+            <span class="arrow">▸</span>
+          </div>
+          <ul class="lesson-list" id="intro-ux-lessons">
+            <li class="lesson completed">
+              <input type="checkbox" id="lesson1" checked disabled />
+              <label for="lesson1">What is User Experience (UX) Design?</label>
+              <span class="duration">4min</span>
+            </li>
+            <li class="lesson completed">
+              <input type="checkbox" id="lesson2" checked disabled />
+              <label for="lesson2">Historical Overview of UX Design</label>
+              <span class="duration">4min</span>
+            </li>
+            <li class="lesson active">
+              <input type="checkbox" id="lesson3" checked disabled />
+              <label for="lesson3">Understanding User-Centered Design</label>
+              <span class="duration">4min</span>
+            </li>
+            <li class="lesson">
+              <input type="checkbox" id="lesson4" disabled />
+              <label for="lesson4"
+                >The Role of UX Design in Digital Products</label
+              >
+              <span class="duration">4min</span>
+            </li>
+            <li class="lesson">
+              <input type="checkbox" id="lesson5" disabled />
+              <label for="lesson5"
+                >Introduction to UX Design Tools and Techniques</label
+              >
+              <span class="duration">4min</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-header" data-section="basics-ucd">
+            <span>Basics of User-Centered Design</span>
+            <span class="arrow">▸</span>
+          </div>
+          <ul class="lesson-list" id="basics-ucd-lessons" style="display: none">
+            <li class="lesson">
+              <input type="checkbox" id="lessonB1" disabled />
+              <label for="lessonB1">Key Principles</label>
+              <span class="duration">5min</span>
+            </li>
+            <li class="lesson">
+              <input type="checkbox" id="lessonB2" disabled />
+              <label for="lessonB2">User Research Methods</label>
+              <span class="duration">7min</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-header" data-section="elements-ux">
+            <span>Elements of User Experience</span>
+            <span class="arrow">▸</span>
+          </div>
+          <ul
+            class="lesson-list"
+            id="elements-ux-lessons"
+            style="display: none"
+          >
+            <li class="lesson">
+              <input type="checkbox" id="lessonE1" disabled />
+              <label for="lessonE1">Information Architecture</label>
+              <span class="duration">6min</span>
+            </li>
+            <li class="lesson">
+              <input type="checkbox" id="lessonE2" disabled />
+              <label for="lessonE2">Interaction Design</label>
+              <span class="duration">8min</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-header" data-section="visual-design">
+            <span>Visual Design Principles</span>
+            <span class="arrow">▸</span>
+          </div>
+          <ul
+            class="lesson-list"
+            id="visual-design-lessons"
+            style="display: none"
+          >
+            <li class="lesson">
+              <input type="checkbox" id="lessonV1" disabled />
+              <label for="lessonV1">Color Theory & Typography</label>
+              <span class="duration">5min</span>
+            </li>
+            <li class="lesson">
+              <input type="checkbox" id="lessonV2" disabled />
+              <label for="lessonV2">Layout and Composition</label>
+              <span class="duration">7min</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <script src="Assets/js/orderComplete.js"></script>
   </body>
 </html>
