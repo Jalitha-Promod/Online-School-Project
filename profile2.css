@@ -1,0 +1,657 @@
+
+/* Basic Reset and Font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    display: flex;
+    flex-direction: column; /* Stacks navbar on top of content-wrapper */
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px; /* py-4 px-6, adjusted from your code */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; /* From your provided code */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 10px; /* Provides space between elements */
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left {
+    gap: 20px; /* space-x-5 */
+}
+
+.logo {
+    height: 28px; /* Adjusted slightly */
+    margin-right: 8px; /* mr-2 */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4a5568; /* text-gray-700 */
+    font-weight: 500; /* font-medium */
+    font-size: 0.95rem; /* text-sm */
+    transition: color 0.2s ease-in-out;
+    margin-right: 20px; /* From your code, adjust as needed with gap */
+}
+
+.nav-link:last-of-type {
+    margin-right: 0; /* Remove margin for the last link in a group if using gaps */
+}
+
+.nav-link:hover {
+    color: #1a202c; /* hover:text-gray-900 */
+}
+
+.main-brand {
+    font-weight: 700; /* For "Oracle" link, if it's meant to be bolder */
+    font-size: 1.1rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f7fafc; /* bg-gray-100 */
+    border-radius: 6px; /* rounded-md */
+    padding: 4px 12px; /* px-4 py-2 */
+    width: 100%; /* Default to full width for small screens */
+    max-width: 600px; /* max-w-md */
+    border: 1px solid #ccc; /* border border-gray-200 */
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 6px 8px;
+    color: #2d3748; /* text-gray-800 */
+    width: 100%; /* Ensure input takes full width within its container */
+}
+
+.search-box input::placeholder {
+    color: #a0aec0; /* text-gray-400 */
+}
+
+/* Material Icons for search icon in navbar's search box */
+.material-icons.search-icon-material {
+    color: #a0aec0; /* text-gray-400 */
+    font-size: 20px; /* text-xl */
+}
+
+/* Material Icons for other icons in navbar-right */
+.material-icons.icon-material {
+    color: #4a5568; /* text-gray-700 */
+    font-size: 24px; /* text-2xl */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    margin-left: 20px; /* From your provided code */
+}
+
+.material-icons.icon-material:hover {
+    color: #1a202c; /* hover:text-gray-900 */
+}
+
+.profile-circle {
+    width: 36px; /* w-9 */
+    height: 36px; /* h-9 */
+    border-radius: 9999px; /* rounded-full */
+    background-color: #3182ce; /* bg-blue-500 */
+    color: #fff; /* text-white */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600; /* font-semibold */
+    font-size: 1rem; /* text-base */
+    cursor: pointer;
+    margin-left: 20px; /* Aligns with other icons */
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-center {
+        order: 3; /* Move search to bottom */
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar-right {
+        order: 2; /* Move right icons below left links */
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-end; /* Align right icons to the right */
+    }
+    .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .navbar .logo {
+        margin-right: 0;
+    }
+    .profile-circle, .material-icons.icon-material {
+        margin-left: 10px; /* Reduce spacing on mobile */
+    }
+}
+
+/* Content Wrapper for Sidebar and Main Content */
+.content-wrapper {
+    display: flex;
+    flex: 1; /* Allows it to take remaining vertical space */
+    width: 100%; /* Ensure it spans full width below navbar */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 256px; /* w-64 (256px) */
+    background-color: #fff; /* bg-white */
+    padding: 32px 24px; /* p-6 (24px horizontal, 32px vertical) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    border-top-right-radius: 8px; /* rounded-r-lg */
+    border-bottom-right-radius: 8px; /* rounded-r-lg */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - var(--navbar-height, 68px)); /* Adjust height for navbar */
+    position: sticky; /* Keep sidebar in place */
+    top: 0; /* Align to top of viewport */
+    left: 0;
+    z-index: 10; /* Ensure it's above other content if scrolling */
+}
+
+/* Responsive Sidebar Adjustments (Stack sidebar and main content on smaller screens) */
+@media (max-width: 1024px) { /* Adjust breakpoint as needed */
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-radius: 0; /* Remove rounded corners if full width */
+        padding: 20px;
+        box-shadow: none; /* Remove shadow to prevent overlap issues */
+        position: relative; /* Remove sticky on mobile for full scroll */
+        min-height: auto;
+    }
+    .profile-section {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .profile-pic {
+        width: 64px;
+        height: 64px;
+    }
+    .profile-name {
+        margin-bottom: 0;
+    }
+    .share-profile-btn {
+        display: none; /* Hide share button on small screens */
+    }
+    .nav-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .nav-menu li {
+        margin-bottom: 0;
+    }
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    .nav-item .fas {
+        margin-right: 8px;
+    }
+}
+
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px; /* mb-8 */
+}
+
+.profile-pic {
+    width: 96px; /* w-24 */
+    height: 96px; /* h-24 */
+    border-radius: 9999px; /* rounded-full */
+    object-fit: cover;
+    margin-bottom: 16px; /* mb-4 */
+    border: 4px solid #e2e8f0; /* border-4 border-gray-200 */
+}
+
+.profile-name {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #2d3748; /* text-gray-800 */
+    margin-bottom: 8px; /* mb-2 */
+}
+
+.share-profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7fafc; /* bg-gray-100 */
+    color: #4a5568; /* text-gray-700 */
+    padding: 8px 16px; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    border: none;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out; /* transition duration-200 */
+}
+
+.share-profile-btn:hover {
+    background-color: #edf2f7; /* hover:bg-gray-200 */
+}
+
+.share-profile-btn .fas {
+    margin-left: 8px; /* ml-2 */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    width: 100%; /* w-full */
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 8px; /* mb-2 */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px; /* p-3 */
+    border-radius: 8px; /* rounded-lg */
+    color: #4a5568; /* text-gray-700 */
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out; /* transition duration-200 */
+}
+
+.nav-item:hover {
+    background-color: #f7fafc; /* hover:bg-gray-100 */
+}
+
+.nav-item .fas {
+    margin-right: 12px; /* mr-3 */
+}
+
+.nav-item.active {
+    background-color: #000; /* bg-black */
+    color: #fff; /* text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+
+/* Main Content Area */
+.main-content {
+    flex: 1; /* flex-1 */
+    padding: 32px; /* p-8 */
+    overflow-y: auto; /* Allow main content to scroll if needed */
+}
+
+.messages-container {
+    background-color: #fff; /* bg-white */
+    border-radius: 8px; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    padding: 24px; /* p-6 */
+}
+
+.messages-heading {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #1a202c; /* text-gray-900 */
+    margin-bottom: 24px; /* mb-6 */
+}
+
+/* Search and Filter Section (Messages) */
+.search-filter-section {
+    display: flex;
+    flex-direction: column; /* flex-col */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px; /* mb-6 */
+    gap: 16px; /* space-y-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .search-filter-section {
+        flex-direction: row; /* sm:flex-row */
+        gap: 0; /* sm:space-y-0 */
+        margin-left: 16px; /* sm:space-x-4 */
+    }
+}
+
+.search-bar-wrapper {
+    position: relative;
+    flex: 1; /* flex-1 */
+    width: 100%; /* w-full */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .search-bar-wrapper {
+        width: auto; /* sm:w-auto */
+    }
+}
+
+.search-input {
+    width: 100%; /* w-full */
+    padding: 8px 16px 8px 40px; /* pl-10 pr-4 py-2 */
+    border: 1px solid #cbd5e0; /* border border-gray-300 */
+    border-radius: 9999px; /* rounded-full */
+    outline: none;
+    transition: all 200ms ease-in-out;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+/* Search icon within the messages search bar */
+.search-icon {
+    position: absolute;
+    left: 12px; /* left-3 */
+    top: 50%; /* top-1/2 */
+    transform: translateY(-50%); /* -translate-y-1/2 */
+    color: #a0aec0; /* text-gray-400 */
+}
+
+.sort-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* space-x-4 */
+    width: 100%; /* w-full */
+    justify-content: flex-end; /* justify-end */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .sort-filter-controls {
+        width: auto; /* sm:w-auto */
+    }
+}
+
+.sort-by-group {
+    display: flex;
+    align-items: center;
+}
+
+.sort-by-label {
+    color: #4a5568; /* text-gray-600 */
+    margin-right: 8px; /* mr-2 */
+}
+
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select {
+    appearance: none; /* appearance-none */
+    background-color: #fff; /* bg-white */
+    border: 1px solid #cbd5e0; /* border border-gray-300 */
+    color: #4a5568; /* text-gray-700 */
+    padding: 8px 16px 8px 16px; /* py-2 pl-4 */
+    padding-right: 32px; /* pr-8 */
+    border-radius: 9999px; /* rounded-full */
+    line-height: 1.25; /* leading-tight */
+    outline: none;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.custom-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 8px; /* px-2 */
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #4a5568; /* text-gray-700 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    background-color: #f7fafc; /* bg-gray-100 */
+    color: #4a5568; /* text-gray-700 */
+    padding: 8px 16px; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    border: none;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out; /* transition duration-200 */
+}
+
+.filter-btn:hover {
+    background-color: #edf2f7; /* hover:bg-gray-200 */
+}
+
+.filter-btn .fas {
+    margin-right: 8px; /* mr-2 */
+}
+
+/* Message List */
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* space-y-4 */
+}
+
+.message-entry {
+    display: flex;
+    align-items: flex-start; /* items-start */
+    padding: 16px; /* p-4 */
+    background-color: #f7fafc; /* bg-gray-50 */
+    border-radius: 8px; /* rounded-lg */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+    transition: all 200ms ease-in-out; /* transition duration-200 */
+}
+
+.message-entry:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* hover:shadow-md */
+}
+
+.message-sender-pic {
+    width: 48px; /* w-12 */
+    height: 48px; /* h-12 */
+    border-radius: 9999px; /* rounded-full */
+    object-fit: cover;
+    margin-right: 16px; /* mr-4 */
+}
+
+.message-details {
+    flex: 1; /* flex-1 */
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px; /* mb-1 */
+}
+
+.message-sender-name {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #2d3748; /* text-gray-800 */
+}
+
+.message-date {
+    font-size: 0.875rem; /* text-sm */
+    color: #718096; /* text-gray-500 */
+}
+
+.message-text {
+    color: #4a5568; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: #202d38; /* Dark background color from image */
+    color: #a0aec0; /* Light grey text color for general content */
+    padding: 50px 32px; /* Top/bottom padding and horizontal padding */
+    margin-top: 40px; /* Space above the footer */
+}
+
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Proportional column widths */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px; /* Max width to center content */
+    margin: 0 auto; /* Center the content */
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    color: #fff; /* White color for headings */
+    font-size: 1.15rem; /* Slightly larger heading font size */
+    font-weight: 600; /* Semibold font weight */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+/* Brand Section Specifics */
+.footer-brand .brand-logo-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.byway-logo {
+    height: 32px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.brand-name {
+    color: #fff; /* White color for brand name */
+    font-size: 1.5rem; /* Larger font size for brand name */
+    font-weight: 700; /* Bold font weight */
+}
+
+.footer-brand .tagline {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.footer-brand .description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Links Group Specifics */
+.footer-links-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-group ul li {
+    margin-bottom: 12px; /* Space between list items */
+}
+
+.footer-links-group ul li a {
+    color: #a0aec0; /* Light grey for links */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links-group ul li a:hover {
+    color: #fff; /* White on hover */
+}
+
+/* Contact Section Specifics */
+.footer-contact p {
+    margin-bottom: 10px; /* Space between contact lines */
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between social icons */
+    margin-top: 20px;
+}
+
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; /* Size of the social icon circle */
+    height: 36px;
+    border-radius: 50%; /* Make it round */
+    background-color: #3b4c5d; /* Darker background for circles */
+    color: #fff; /* White icon color */
+    font-size: 1rem; /* Icon size */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icon-link:hover {
+    background-color: #fff; /* White background on hover */
+    color: #202d38; /* Dark text on hover */
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 992px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-content-wrapper {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 40px; /* More space between stacked sections */
+    }
+
+    .main-footer {
+        padding: 40px 20px;
+    }
+
+    .footer-section {
+        align-items: flex-start; /* Align content to the left when stacked */
+    }
+
+    .brand-logo-name {
+        justify-content: flex-start;
+    }
+}
+
+ /* .message-entry.unread {
+    background-color: #e0f2fe; 
+    border-left: 4px solid #3b82f6; 
+}   */

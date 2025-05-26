@@ -248,7 +248,142 @@ body {
     border-radius: 8px;
     cursor: pointer;
   }
-  
+
+ /* Footer Styles */
+.main-footer {
+  background-color: #202d38; /* Dark background color from image */
+  color: #a0aec0; /* Light grey text color for general content */
+  padding: 50px 32px; /* Top/bottom padding and horizontal padding */
+  margin-top: 40px; /* Space above the footer */
+}
+
+.footer-content-wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Proportional column widths */
+  gap: 30px; /* Space between columns */
+  max-width: 1200px; /* Max width to center content */
+  margin: 0 auto; /* Center the content */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h3 {
+  color: #fff; /* White color for headings */
+  font-size: 1.15rem; /* Slightly larger heading font size */
+  font-weight: 600; /* Semibold font weight */
+  margin-bottom: 20px; /* Space below headings */
+}
+
+/* Brand Section Specifics */
+.footer-brand .brand-logo-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.byway-logo {
+  height: 32px; /* Adjust logo size */
+  margin-right: 10px;
+}
+
+.brand-name {
+  color: #fff; /* White color for brand name */
+  font-size: 1.5rem; /* Larger font size for brand name */
+  font-weight: 700; /* Bold font weight */
+}
+
+.footer-brand .tagline {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.footer-brand .description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Links Group Specifics */
+.footer-links-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-group ul li {
+  margin-bottom: 12px; /* Space between list items */
+}
+
+.footer-links-group ul li a {
+  color: #a0aec0; /* Light grey for links */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links-group ul li a:hover {
+  color: #fff; /* White on hover */
+}
+
+/* Contact Section Specifics */
+.footer-contact p {
+  margin-bottom: 10px; /* Space between contact lines */
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* Space between social icons */
+  margin-top: 20px;
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; /* Size of the social icon circle */
+  height: 36px;
+  border-radius: 50%; /* Make it round */
+  background-color: #3b4c5d; /* Darker background for circles */
+  color: #fff; /* White icon color */
+  font-size: 1rem; /* Icon size */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icon-link:hover {
+  background-color: #fff; /* White background on hover */
+  color: #202d38; /* Dark text on hover */
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 992px) {
+  .footer-content-wrapper {
+      grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content-wrapper {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      gap: 40px; /* More space between stacked sections */
+  }
+
+  .main-footer {
+      padding: 40px 20px;
+  }
+
+  .footer-section {
+      align-items: flex-start; /* Align content to the left when stacked */
+  }
+
+  .brand-logo-name {
+      justify-content: flex-start;
+  }
+}
 
   
   
